@@ -5,7 +5,8 @@
   "description": "A web application front end and API backend for provisioning digital ballots and voter records, and enabling voters to download ballots to mark online, print, and mail back like any other absentee ballot.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production webpack -p --progress --display-used-exports && gulp"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,20 @@
   "bugs": {
     "url": "https://github.com/TrustTheVote-Project/Kylix/issues"
   },
-  "homepage": "https://github.com/TrustTheVote-Project/Kylix#readme"
+  "homepage": "https://github.com/TrustTheVote-Project/Kylix#readme",
+  "dependencies": {
+    "@cmsgov/design-system": "2.0.0-beta.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.0.0",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^3.1.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  }
 }
