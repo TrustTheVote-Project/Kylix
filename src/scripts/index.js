@@ -1,10 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import { KylixStepList } from "./components";
+import { App } from "./containers";
 
-const Example = function () {
-  return <KylixStepList />;
-};
-
-ReactDOM.render(<Example />, document.querySelector("#jsx-root"));
+ReactDOM.render(<App />, document.querySelector("#jsx-root"));
