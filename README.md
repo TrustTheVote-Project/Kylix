@@ -2,15 +2,15 @@
 
 A web application front end and API backend for provisioning digital ballots and voter records, and enabling voters to download ballots to mark online, print, and mail back like any other absentee ballot.
 
+## Environment
+
+**Node version**: built/tested using Node v12.16.3. Untested on lower versions.
+
 ## Getting started
 
 1. Install packages: `npm install`
-1. Compile and bundle assets: `npm run build`
-1. Open `index.html` in a browser.
-
-Example copied from CMSgov design system repo (just to get started):
-
-Link: https://github.com/CMSgov/design-system/tree/master/examples/react-app:
+2. Compile and bundle assets: `npm run build`
+3. Open `index.html` in a browser.
 
 ## Architecture
 
