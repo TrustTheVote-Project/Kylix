@@ -5,6 +5,7 @@ import { useAppState } from "../hooks";
 import { AppStateContext } from "../context";
 import { StepsGuide } from "../components";
 import { Address, Download, FillOut, Info, Home } from "../components/screens";
+import "../../styles/index.scss";
 
 export default function App() {
   const appState = useAppState();

@@ -17,7 +17,7 @@ export default function useAppState() {
       heading: "Download your pdf ballot",
       started: true,
       completed: false,
-      href: "/fill-out",
+      href: "/download",
       // component: StepLink,
     },
     {
