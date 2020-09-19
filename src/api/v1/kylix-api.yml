@@ -1,0 +1,20 @@
+openapi: 3.0.0
+info:
+  title: Kylix API
+  description: Provides voter lookup and ballot delivery
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000/api-v1
+    description: Local mock server instance
+paths:
+  /ping:
+    get:
+      summary: Verifies the api server is running
+      operationId: getPing
+      responses:
+        "200":
+          description: Ping success
+          content:
+            application/json:
+              schema:
+                type: boolean

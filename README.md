@@ -9,7 +9,7 @@ A web application front end and API backend for provisioning digital ballots and
 ## Getting started
 
 1. Install packages: `npm install`
-2. Compile and bundle assets: `npm run build`
+2. Compile and bundle assets: `npm run start`
 3. Open `index.html` in a browser.
 
 ## Architecture
