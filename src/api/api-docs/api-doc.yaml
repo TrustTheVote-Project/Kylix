@@ -4,7 +4,7 @@ info:
   description: Provides voter lookup and ballot delivery
   version: 1.0.0
 servers:
-  - url: http://localhost:3000/v1
+  - url: http://localhost:3000
     description: Local mock server instance
 paths:
   /ping:
@@ -27,7 +27,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/VoterLookupRequest"
+              $ref: "components/schemas/VoterLookupRequest.yaml#/VoterLookupRequest"
       responses:
         "200":
           description: Returns a voter record
