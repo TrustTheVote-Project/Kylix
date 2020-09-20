@@ -10,11 +10,14 @@ const port = 3000;
 expressOpenApi.initialize({
   app,
   apiDoc: fs.readFileSync(
-    path.resolve(__dirname, "../api/v1/kylix-api.yml"),
+    path.resolve(__dirname, "../schema/v1/api-doc.yml"),
     "utf8"
   ),
   operations: {
     getPing: function (req, res) {
+      res.send(true);
+    },
+    postVoterLookup: function (req, res) {
       res.send(true);
     },
   },
@@ -25,6 +28,6 @@ app.listen(port, (err, success) => {
     console.log(err);
   } else {
     console.log(`\nKylix mock server running at http://localhost:${port}`);
-    console.log(`Verify at http://localhost:${port}/ping\n`);
+    console.log(`Verify at http://localhost:${port}/v1/ping\n`);
   }
 });

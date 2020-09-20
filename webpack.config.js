@@ -5,21 +5,20 @@
 const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
-const htmlPlugin = new HtmlWebPackPlugin({
-  template: "./index.html",
-  filename: "./index.html",
-});
-
 const config = {
-  entry: "./src/scripts/index.js",
+  entry: {
+    app: "./src/scripts/index.js",
+    apiBrowser: "./src/api/api-browser.js",
+  },
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     compress: true,
     port: 9000,
   },
   output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, "dist/scripts"),
+    filename: "[name].bundle.js",
+    // chunkFilename: "[id].bundle_[chunkhash].js",
+    path: path.resolve(__dirname, "dist"),
   },
   module: {
     rules: [
@@ -67,9 +66,28 @@ const config = {
           },
         ],
       },
+      {
+        test: /\.yml$/,
+        use: [{ loader: "json-loader" }, { loader: "yaml-loader" }],
+      },
+      {
+        test: /\.css$/,
+        use: [{ loader: "style-loader" }, { loader: "css-loader" }],
+      },
     ],
   },
-  plugins: [htmlPlugin],
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: "index.html",
+      filename: "index.html",
+      chunks: ["app"],
+    }),
+    new HtmlWebPackPlugin({
+      template: "src/api/api-browser.html",
+      filename: "api-browser.html",
+      chunks: ["apiBrowser"],
+    }),
+  ],
 };
 
 module.exports = config;

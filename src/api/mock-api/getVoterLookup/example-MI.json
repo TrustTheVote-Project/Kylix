@@ -1,0 +1,89 @@
+{
+  "VoterRecordsRequest": {
+    "GeneratedDate": "2020-1-1",
+    "Issuer": "KylixDemo",
+    "TransactionId": "12345",
+    "Type": [
+      "other"
+    ],
+    "VendorApplicationId": "Kylix v2020.1",
+    "Voter": {
+      "DateOfBirth": "1983-1-1T00:00:00",
+      "VoterId": [
+        {
+          "Type": "drivers-license",
+          "StringValue": "W888444111666",
+          "AttestNoSuchId": false
+        },
+        {
+          "Type": "ssn4",
+          "StringValue": "4411",
+          "AttestNoSuchId": false
+        }
+      ],
+      "Name": {
+        "FirstName": "MINNIE",
+        "MiddleName": "Q",
+        "LastName": "MOUSE",
+        "Suffix": null
+      },
+      "AdditionalInfo": [
+        {
+          "Name": "EyeColor",
+          "StringValue": "BLU"
+        }
+      ],
+      "RegistrationAddress": {
+        "NumberedThoroughfareAddress_type": {
+          "CompleteAddressNumber": {
+            "AddressNumber": "1221"
+          },
+          "CompleteStreetName": {
+            "StreetNamePreDirectional": {
+              "Value": null
+            },
+            "StreetName": "PALMER",
+            "StreetNamePostType": {
+              "Value": "LN"
+            },
+            "StreetNamePostDirectional": {
+              "Value": null
+            }
+          },
+          "CompleteSubAddress": {
+            "SubAddressType": {
+              "Value": "APT"
+            },
+            "SubAddressIdentifier": {
+              "Value": "3A"
+            }
+          },
+          "CompletePlaceName": [
+            {
+              "PlaceName": [
+                {
+                  "PlaceNameTypeSpecified": true,
+                  "PlaceNameType": "MunicipalJurisdiction",
+                  "Value": "EAST LANSING"
+                },
+                {
+                  "PlaceNameTypeSpecified": true,
+                  "PlaceNameType": "County",
+                  "Value": "78"
+                }
+              ]
+            }
+          ],
+          "StateName": [
+            "MI"
+          ],
+          "ZipCode": [
+            48823
+          ]
+        }
+      },
+      "RegistrationMethod": "Other",
+      "RegistrationFormSpecified": false
+    }
+  }
+}
