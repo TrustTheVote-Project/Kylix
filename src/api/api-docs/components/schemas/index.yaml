@@ -1,0 +1,4 @@
+VoterLookupRequest:
+  $ref: "./VoterLookupRequest.yaml"
+VoterLookupResponse200:
+  $ref: "./VoterLookupResponse200.yaml"

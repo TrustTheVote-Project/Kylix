@@ -7,36 +7,9 @@ servers:
   - url: http://localhost:3000
     description: Local mock server instance
 paths:
-  /ping:
-    get:
-      summary: Verifies the api server is running
-      operationId: getPing
-      responses:
-        "200":
-          description: Ping success
-          content:
-            application/json:
-              schema:
-                type: boolean
-  /voter-lookup:
-    post:
-      summary: Returns a voter lookup
-      operationId: postVoterLookup
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: "components/schemas/VoterLookupRequest.yaml#/VoterLookupRequest"
-      responses:
-        "200":
-          description: Returns a voter record
-        "400":
-          description: Invalid request
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
+  $ref: "./paths/index.yaml"
+components:
+  examples:
+    $ref: "./components/examples/index.yaml"
+  schemas:
+    $ref: "./components/schemas/index.yaml"

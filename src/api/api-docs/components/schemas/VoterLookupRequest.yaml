@@ -1,214 +1,213 @@
-VoterLookupRequest:
-  type: object
-  properties:
-    VoterRecordsRequest:
-      type: object
-      properties:
-        GeneratedDate:
-          type: string
-        Issuer:
-          type: string
-        TransactionId:
-          type: string
-        Type:
-          type: array
-          items:
-            - type: string
-        VendorApplicationId:
-          type: string
-        Voter:
-          type: object
-          properties:
-            DateOfBirth:
-              type: string
-            VoterId:
-              type: array
-              items:
-                - type: object
-                  properties:
-                    Type:
-                      type: string
-                    StringValue:
-                      type: string
-                    AttestNoSuchId:
-                      type: boolean
-                  required:
-                    - Type
-                    - StringValue
-                    - AttestNoSuchId
-                - type: object
-                  properties:
-                    Type:
-                      type: string
-                    StringValue:
-                      type: string
-                    AttestNoSuchId:
-                      type: boolean
-                  required:
-                    - Type
-                    - StringValue
-                    - AttestNoSuchId
-            Name:
-              type: object
-              properties:
-                FirstName:
-                  type: string
-                MiddleName:
-                  type: string
-                LastName:
-                  type: string
-                Suffix:
-                  type: "null"
-              required:
-                - FirstName
-                - MiddleName
-                - LastName
-                - Suffix
-            AdditionalInfo:
-              type: array
-              items:
-                - type: object
-                  properties:
-                    Name:
-                      type: string
-                    StringValue:
-                      type: string
-                  required:
-                    - Name
-                    - StringValue
-            RegistrationAddress:
-              type: object
-              properties:
-                NumberedThoroughfareAddress_type:
-                  type: object
-                  properties:
-                    CompleteAddressNumber:
-                      type: object
-                      properties:
-                        AddressNumber:
-                          type: string
-                      required:
-                        - AddressNumber
-                    CompleteStreetName:
-                      type: object
-                      properties:
-                        StreetNamePreDirectional:
-                          type: object
-                          properties:
-                            Value:
-                              type: "null"
-                          required:
-                            - Value
-                        StreetName:
-                          type: string
-                        StreetNamePostType:
-                          type: object
-                          properties:
-                            Value:
-                              type: string
-                          required:
-                            - Value
-                        StreetNamePostDirectional:
-                          type: object
-                          properties:
-                            Value:
-                              type: "null"
-                          required:
-                            - Value
-                      required:
-                        - StreetNamePreDirectional
-                        - StreetName
-                        - StreetNamePostType
-                        - StreetNamePostDirectional
-                    CompleteSubAddress:
-                      type: object
-                      properties:
-                        SubAddressType:
-                          type: object
-                          properties:
-                            Value:
-                              type: string
-                          required:
-                            - Value
-                        SubAddressIdentifier:
-                          type: object
-                          properties:
-                            Value:
-                              type: string
-                          required:
-                            - Value
-                      required:
-                        - SubAddressType
-                        - SubAddressIdentifier
-                    CompletePlaceName:
-                      type: array
-                      items:
-                        - type: object
-                          properties:
-                            PlaceName:
-                              type: array
-                              items:
-                                - type: object
-                                  properties:
-                                    PlaceNameTypeSpecified:
-                                      type: boolean
-                                    PlaceNameType:
-                                      type: string
-                                    Value:
-                                      type: string
-                                  required:
-                                    - PlaceNameTypeSpecified
-                                    - PlaceNameType
-                                    - Value
-                                - type: object
-                                  properties:
-                                    PlaceNameTypeSpecified:
-                                      type: boolean
-                                    PlaceNameType:
-                                      type: string
-                                    Value:
-                                      type: string
-                                  required:
-                                    - PlaceNameTypeSpecified
-                                    - PlaceNameType
-                                    - Value
-                          required:
-                            - PlaceName
-                    StateName:
-                      type: array
-                      items:
-                        - type: string
-                    ZipCode:
-                      type: array
-                      items:
-                        - type: integer
-                  required:
-                    - CompleteAddressNumber
-                    - CompleteStreetName
-                    - CompleteSubAddress
-                    - CompletePlaceName
-                    - StateName
-                    - ZipCode
-              required:
-                - NumberedThoroughfareAddress_type
-            RegistrationMethod:
-              type: string
-            RegistrationFormSpecified:
-              type: boolean
-          required:
-            - DateOfBirth
-            - VoterId
-            - Name
-            - AdditionalInfo
-            - RegistrationAddress
-            - RegistrationMethod
-            - RegistrationFormSpecified
-      required:
-        - GeneratedDate
-        - Issuer
-        - TransactionId
-        - Type
-        - VendorApplicationId
-        - Voter
-  required:
-    - VoterRecordsRequest
+type: object
+properties:
+  VoterRecordsRequest:
+    type: object
+    properties:
+      GeneratedDate:
+        type: string
+      Issuer:
+        type: string
+      TransactionId:
+        type: string
+      Type:
+        type: array
+        items:
+          - type: string
+      VendorApplicationId:
+        type: string
+      Voter:
+        type: object
+        properties:
+          DateOfBirth:
+            type: string
+          VoterId:
+            type: array
+            items:
+              - type: object
+                properties:
+                  Type:
+                    type: string
+                  StringValue:
+                    type: string
+                  AttestNoSuchId:
+                    type: boolean
+                required:
+                  - Type
+                  - StringValue
+                  - AttestNoSuchId
+              - type: object
+                properties:
+                  Type:
+                    type: string
+                  StringValue:
+                    type: string
+                  AttestNoSuchId:
+                    type: boolean
+                required:
+                  - Type
+                  - StringValue
+                  - AttestNoSuchId
+          Name:
+            type: object
+            properties:
+              FirstName:
+                type: string
+              MiddleName:
+                type: string
+              LastName:
+                type: string
+              Suffix:
+                type: "null"
+            required:
+              - FirstName
+              - MiddleName
+              - LastName
+              - Suffix
+          AdditionalInfo:
+            type: array
+            items:
+              - type: object
+                properties:
+                  Name:
+                    type: string
+                  StringValue:
+                    type: string
+                required:
+                  - Name
+                  - StringValue
+          RegistrationAddress:
+            type: object
+            properties:
+              NumberedThoroughfareAddress_type:
+                type: object
+                properties:
+                  CompleteAddressNumber:
+                    type: object
+                    properties:
+                      AddressNumber:
+                        type: string
+                    required:
+                      - AddressNumber
+                  CompleteStreetName:
+                    type: object
+                    properties:
+                      StreetNamePreDirectional:
+                        type: object
+                        properties:
+                          Value:
+                            type: "null"
+                        required:
+                          - Value
+                      StreetName:
+                        type: string
+                      StreetNamePostType:
+                        type: object
+                        properties:
+                          Value:
+                            type: string
+                        required:
+                          - Value
+                      StreetNamePostDirectional:
+                        type: object
+                        properties:
+                          Value:
+                            type: "null"
+                        required:
+                          - Value
+                    required:
+                      - StreetNamePreDirectional
+                      - StreetName
+                      - StreetNamePostType
+                      - StreetNamePostDirectional
+                  CompleteSubAddress:
+                    type: object
+                    properties:
+                      SubAddressType:
+                        type: object
+                        properties:
+                          Value:
+                            type: string
+                        required:
+                          - Value
+                      SubAddressIdentifier:
+                        type: object
+                        properties:
+                          Value:
+                            type: string
+                        required:
+                          - Value
+                    required:
+                      - SubAddressType
+                      - SubAddressIdentifier
+                  CompletePlaceName:
+                    type: array
+                    items:
+                      - type: object
+                        properties:
+                          PlaceName:
+                            type: array
+                            items:
+                              - type: object
+                                properties:
+                                  PlaceNameTypeSpecified:
+                                    type: boolean
+                                  PlaceNameType:
+                                    type: string
+                                  Value:
+                                    type: string
+                                required:
+                                  - PlaceNameTypeSpecified
+                                  - PlaceNameType
+                                  - Value
+                              - type: object
+                                properties:
+                                  PlaceNameTypeSpecified:
+                                    type: boolean
+                                  PlaceNameType:
+                                    type: string
+                                  Value:
+                                    type: string
+                                required:
+                                  - PlaceNameTypeSpecified
+                                  - PlaceNameType
+                                  - Value
+                        required:
+                          - PlaceName
+                  StateName:
+                    type: array
+                    items:
+                      - type: string
+                  ZipCode:
+                    type: array
+                    items:
+                      - type: integer
+                required:
+                  - CompleteAddressNumber
+                  - CompleteStreetName
+                  - CompleteSubAddress
+                  - CompletePlaceName
+                  - StateName
+                  - ZipCode
+            required:
+              - NumberedThoroughfareAddress_type
+          RegistrationMethod:
+            type: string
+          RegistrationFormSpecified:
+            type: boolean
+        required:
+          - DateOfBirth
+          - VoterId
+          - Name
+          - AdditionalInfo
+          - RegistrationAddress
+          - RegistrationMethod
+          - RegistrationFormSpecified
+    required:
+      - GeneratedDate
+      - Issuer
+      - TransactionId
+      - Type
+      - VendorApplicationId
+      - Voter
+required:
+  - VoterRecordsRequest

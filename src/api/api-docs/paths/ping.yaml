@@ -1,0 +1,15 @@
+get:
+  summary: Verifies the api server is running
+  operationId: getPing
+  responses:
+    "200":
+      description: Ping success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties: 
+              message:
+                type: string
+            example: 
+              message: OK

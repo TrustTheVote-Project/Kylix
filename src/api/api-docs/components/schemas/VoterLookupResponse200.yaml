@@ -1,0 +1,6 @@
+type: object
+properties:
+  BallotUrl:
+    type: string
+example:
+  BallotUrl: http://mockurl.com/static/mock-ballots/michigan1.pdf
