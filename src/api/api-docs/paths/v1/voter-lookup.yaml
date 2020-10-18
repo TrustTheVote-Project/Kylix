@@ -8,8 +8,8 @@ post:
         schema:
           $ref: "../../components/schemas/VoterLookupRequest.yaml"
         examples:
-          Michigan: 
-            summary: "Returns a success response for Michigan user"
+          Michigan:
+            summary: "Valid request for Michigan ballot"
             value:
               $ref: "../../components/examples/voter-lookup--MI.json"
   responses:
