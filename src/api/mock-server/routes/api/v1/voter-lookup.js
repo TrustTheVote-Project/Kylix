@@ -8,7 +8,7 @@ router.post('/', (req, res) => {
   const { protocol } = req;
   const host = req.get('host');
   if (_.isEqual(req.body.VoterRecordsRequest, voterLookupMI.VoterRecordsRequest)) {
-    res.status(200).json({ BallotUrl: `${protocol}://${host}/pdf/dummy-MI.pdf` });
+    res.status(200).json({ BallotUrl: `${protocol}://${host}/pdf/ballot-MI.pdf` });
   } else {
     res.status(401).json({ message: 'Pdf not found' });
   }

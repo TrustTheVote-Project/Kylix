@@ -1,6 +1,6 @@
 import React from 'react';
 
-const mockServerPdf = 'http://localhost:3000/pdf/dummy-MI.pdf';
+const mockServerPdf = 'http://localhost:3000/pdf/ballot-MI.pdf';
 
 export default function Download() {
   return (
