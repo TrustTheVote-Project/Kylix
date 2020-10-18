@@ -1,32 +1,29 @@
-import React, { useState, useEffect } from "react";
+import { useState } from 'react';
 
 export default function useAppState() {
-  const [addressComplete, setAddressComplete] = useState(false);
-  const [steps, setSteps] = useState([
+  // const [addressComplete, setAddressComplete] = useState(false);
+  const [steps] = useState([
     {
-      id: "info",
-      heading: "Enter your info",
-      description: "Enter your address, state ID, etc.",
+      id: 'info',
+      heading: 'Enter your info',
+      description: 'Enter your address, state ID, etc.',
       started: true,
       completed: true,
-      href: "/info",
-      // component: StepLink,
+      href: '/info',
     },
     {
-      id: "download-ballot",
-      heading: "Download your pdf ballot",
+      id: 'download-ballot',
+      heading: 'Download your pdf ballot',
       started: true,
       completed: false,
-      href: "/download",
-      // component: StepLink,
+      href: '/download',
     },
     {
-      id: "fill-out",
-      heading: "Fill out and print",
-      description: "Fill out your ballot using Adobe software and print",
+      id: 'fill-out',
+      heading: 'Fill out and print',
+      description: 'Fill out your ballot using Adobe software and print',
       started: false,
       completed: false,
-      // component: <Link to="/" />,
     },
   ]);
 

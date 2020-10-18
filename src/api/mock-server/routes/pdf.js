@@ -5,7 +5,7 @@ const path = require('path');
 
 const router = express.Router();
 
-// dummy-pdf copied from 
+// dummy-pdf copied from
 // https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf
 
 router.get('/:pdfName', (req, res) => {
@@ -15,8 +15,7 @@ router.get('/:pdfName', (req, res) => {
     const data = fs.readFileSync(pathToFile);
     res.contentType('application/pdf');
     res.send(data);
-  }
-  catch {
+  } catch {
     res.status(404).json({ message: 'Pdf not found' });
   }
 });

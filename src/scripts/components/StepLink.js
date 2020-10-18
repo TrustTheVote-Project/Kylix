@@ -1,10 +1,17 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-const StepLink = ({ className, ...props }) => (
-  <Link to={props.href} {...props}>
-    {props.children}
+const StepLink = ({ className, href, children }) => (
+  <Link to={href} className={className}>
+    {children}
   </Link>
 );
+
+StepLink.propTypes = {
+  className: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
+  children: PropTypes.element.isRequired,
+};
 
 export default StepLink;

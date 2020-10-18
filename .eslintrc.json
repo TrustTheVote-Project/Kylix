@@ -1,23 +1,36 @@
 {
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es2021": true,
-        "node": true
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "plugin:react/recommended",
-        "airbnb"
+    "ecmaVersion": 12
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "indent": [
+      "error",
+      2
     ],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 12
-    },
-    "plugins": [
-        "react"
-    ],
-    "rules": {
-    }
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ]
+  }
 }
