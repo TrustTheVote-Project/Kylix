@@ -13,7 +13,7 @@ module.exports = async function useApiDocs(app, port) {
       ...specObj,
       servers: [
         {
-          url: `http://localhost:${port}`,
+          url: `http://localhost:${port}/api`,
           description: 'Local mock server instance',
         },
       ],

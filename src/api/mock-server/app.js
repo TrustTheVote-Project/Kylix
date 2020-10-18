@@ -1,11 +1,12 @@
 /* eslint no-console: 0 */
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const useRoutes = require('./useRoutes');
 const useApiDocs = require('./useApiDocs');
-
 const port = 3000;
 const app = express();
+app.use(cors());
 
 const startApp = async () => {
   app.use(bodyParser.json());
@@ -16,8 +17,8 @@ const startApp = async () => {
       console.log(err);
     } else {
       console.log(`\nKylix api running at http://localhost:${port}`);
-      console.log(`Docs at http://localhost:${port}/api-docs\n`);
-      console.log(`Verify at http://localhost:${port}/ping\n`);
+      console.log(`\nDocs at http://localhost:${port}/api-docs`);
+      console.log(`\nVerify at http://localhost:${port}/ping`);
     }
   });
 };
