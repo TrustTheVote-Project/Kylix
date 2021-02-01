@@ -13,6 +13,12 @@ A web application front end and API backend for provisioning digital ballots and
 3. Open `http://localhost:9000` in a browser.
 4. Run mock api `npm run start-mock-api` and browse at `http://localhost:9000/api-browser.html`
 
+## Demo
+
+In the demo, enter the following to trigger a successful response: 
+Driver's License: W888444111666
+Eye Color: Blue
+
 ## Architecture
 
 **UI component library:** CMS design system
