@@ -11,7 +11,7 @@ A web application front end and API backend for provisioning digital ballots and
 1. Install packages: `npm install`
 2. Compile and bundle assets: `npm run start`
 3. Open `http://localhost:9000` in a browser.
-4. Run mock api `npm run start-mock-api` and browse at `http://localhost:9000/api-browser.html`
+4. Run mock api `npm run start-mock-api` and browse api schema at `http://localhost:9000/api-browser.html`
 
 ## Demo
 
