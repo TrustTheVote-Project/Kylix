@@ -2,8 +2,8 @@
 $font-path: "../fonts" !default;
 $image-path: "../images" !default;
 
-// In our Gulp Sass task, we've added node_modules to the list of paths that
-// are used to resolve @import declarations, so we omit it from the path below.
+
+$focus-color: #62c0ff;
 @import "@cmsgov/design-system/dist/scss/index";
 
 .wrap {
@@ -11,3 +11,5 @@ $image-path: "../images" !default;
   max-width: 800px;
   width: 95%;
 }
+
+$ds-include-focus-styles: true;

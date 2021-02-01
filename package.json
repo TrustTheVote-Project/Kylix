@@ -9,7 +9,7 @@
     "build": "NODE_ENV=production webpack -p --progress --display-used-exports",
     "start-client": "webpack-dev-server",
     "start-mock-server": "node ./src/api/mock-server/app.js",
-    "start": "concurrently \"npm run start-client\" \"npm run start-mock-api\""
+    "start": "concurrently \"npm run start-client\" \"npm run start-mock-server\""
   },
   "repository": {
     "type": "git",

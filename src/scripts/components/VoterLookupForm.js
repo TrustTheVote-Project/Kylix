@@ -100,7 +100,7 @@ const VoterLookupForm = () => {
           return <option value={o.value}>{o.label}</option>;
         })}
       </Dropdown>
-      <Button className="ds-c-field" type="submit">Submit</Button>
+      <Button className="ds-c-button" variation="primary" type="submit">Submit</Button>
     </form>
   );
 };
