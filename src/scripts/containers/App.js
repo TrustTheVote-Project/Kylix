@@ -1,11 +1,14 @@
-import React from "react";
-import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
-import StepList from "@cmsgov/design-system/dist/components/StepList/StepList";
-import { useAppState } from "../hooks";
-import { AppStateContext } from "../context";
-import { StepsGuide } from "../components";
-import { Address, Download, FillOut, Info, Home } from "../components/screens";
-import "../../styles/index.scss";
+import React from 'react';
+import {
+  HashRouter as Router, Switch, Route,
+} from 'react-router-dom';
+import useAppState from '../hooks/useAppState';
+import AppStateContext from '../context/AppStateContext';
+import StepsGuide from '../components/StepsGuide';
+import {
+  Download, FillOut, Info, Home,
+} from '../components/screens';
+import '../../styles/index.scss';
 
 export default function App() {
   const appState = useAppState();

@@ -1,0 +1,15 @@
+openapi: 3.0.0
+info:
+  title: Kylix API
+  description: Provides voter lookup and ballot delivery
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+    description: Local mock server instance
+paths:
+  $ref: "./paths/index.yaml"
+components:
+  examples:
+    $ref: "./components/examples/index.yaml"
+  schemas:
+    $ref: "./components/schemas/index.yaml"

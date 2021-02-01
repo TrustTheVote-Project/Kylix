@@ -1,15 +1,15 @@
-module.exports = function (api) {
+module.exports = function babelConfig(api) {
   api.cache(true);
 
   const presets = [
     [
-      "@babel/preset-env",
+      '@babel/preset-env',
       {
-        useBuiltIns: "entry",
-        corejs: "3.0.0",
+        useBuiltIns: 'entry',
+        corejs: '3.0.0',
       },
     ],
-    "@babel/preset-react",
+    '@babel/preset-react',
   ];
 
   return {

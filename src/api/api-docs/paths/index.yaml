@@ -1,0 +1,4 @@
+/ping:
+  $ref: "./ping.yaml"
+/v1/voter-lookup:
+  $ref: "./v1/voter-lookup.yaml"

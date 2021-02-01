@@ -1,0 +1,30 @@
+post:
+  summary: Returns a voter lookup
+  operationId: postVoterLookup
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../../components/schemas/VoterLookupRequest.yaml"
+        examples:
+          Michigan:
+            summary: "Valid request for Michigan ballot"
+            value:
+              $ref: "../../components/examples/voter-lookup--MI.json"
+  responses:
+    "200":
+      description: Returns a voter record
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/schemas/VoterLookupResponse200.yaml"
+    "401":
+      description: Invalid request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
