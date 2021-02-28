@@ -5,6 +5,7 @@ import {
 import useAppState from '../hooks/useAppState';
 import AppStateContext from '../context/AppStateContext';
 import StepsGuide from '../components/StepsGuide';
+import DesignSystemWrapper from '../components/DesignSystemWrapper';
 import {
   Download, FillOut, Info, Home,
 } from '../components/screens';
@@ -13,7 +14,7 @@ export default function WizardFlow() {
   const { path } = useRouteMatch();
   const appState = useAppState();
   return (
-    <div>
+    <DesignSystemWrapper>
       <AppStateContext.Provider value={appState}>
         <nav>
           <StepsGuide appState={appState} />
@@ -35,6 +36,6 @@ export default function WizardFlow() {
           </Switch>
         </main>
       </AppStateContext.Provider>
-    </div>
+    </DesignSystemWrapper>
   );
 }
