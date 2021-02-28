@@ -8,6 +8,7 @@ import StepsGuide from '../components/StepsGuide';
 import {
   Download, FillOut, Info, Home,
 } from '../components/screens';
+import DemoHome from '../components/screens/DemoHome';
 import '../../styles/index.scss';
 
 export default function App() {
@@ -15,25 +16,32 @@ export default function App() {
   return (
     <AppStateContext.Provider value={appState}>
       <Router>
-        <nav>
-          <StepsGuide appState={appState} />
-        </nav>
-        <main id="kx-main">
-          <Switch>
-            <Route path="/info">
-              <Info />
-            </Route>
-            <Route path="/download">
-              <Download />
-            </Route>
-            <Route path="/fill-out">
-              <FillOut />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-        </main>
+        <Switch>
+          <Route path="/wizard">
+            <nav>
+              <StepsGuide appState={appState} />
+            </nav>
+            <main id="kx-main">
+              <Switch>
+                <Route path="/wizard/info">
+                  <Info />
+                </Route>
+                <Route path="/wizard/download">
+                  <Download />
+                </Route>
+                <Route path="/wizard/fill-out">
+                  <FillOut />
+                </Route>
+                <Route path="/wizard">
+                  <Home />
+                </Route>
+              </Switch>
+            </main>
+          </Route>
+          <Route path="/">
+            <DemoHome />
+          </Route>
+        </Switch>
       </Router>
     </AppStateContext.Provider>
   );
