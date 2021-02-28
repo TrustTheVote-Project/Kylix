@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  HashRouter as Router, Switch, Route,
+  BrowserRouter as Router, Switch, Route,
 } from 'react-router-dom';
 import useAppState from '../hooks/useAppState';
 import AppStateContext from '../context/AppStateContext';
@@ -14,7 +14,7 @@ export default function App() {
   const appState = useAppState();
   return (
     <AppStateContext.Provider value={appState}>
-      <Router hashType="noslash">
+      <Router>
         <nav>
           <StepsGuide appState={appState} />
         </nav>
