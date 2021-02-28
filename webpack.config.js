@@ -21,6 +21,7 @@ const config = {
     filename: '[name].bundle.js',
     // chunkFilename: "[id].bundle_[chunkhash].js",
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
   module: {
     rules: [
