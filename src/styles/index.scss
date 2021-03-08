@@ -1,15 +1,19 @@
 // Update font and image paths relative to minified css path
-$font-path: "../fonts" !default;
-$image-path: "../images" !default;
-
-
+$font-path: '../fonts' !default;
+$image-path: '../images' !default;
 $focus-color: #62c0ff;
-@import "@cmsgov/design-system/dist/scss/index";
+@import '@cmsgov/design-system/dist/scss/index';
 
-.wrap {
+.wrap,
+.kx-wrap {
   margin: auto;
   max-width: 800px;
   width: 95%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
 
 $ds-include-focus-styles: true;

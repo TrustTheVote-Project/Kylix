@@ -1,40 +1,15 @@
 import React from 'react';
-import {
-  Switch, Route, useRouteMatch,
-} from 'react-router-dom';
-import useAppState from '../hooks/useAppState';
-import AppStateContext from '../context/AppStateContext';
-import StepsGuide from '../components/StepsGuide';
-import {
-  Download, FillOut, Info, Home,
-} from '../components/screens';
+import DynamicForm from '../components/DynamicForm';
 
 export default function DynamicFormFlow() {
-  const { path } = useRouteMatch();
-  const appState = useAppState();
   return (
-    <div>
-      <AppStateContext.Provider value={appState}>
-        <nav>
-          <StepsGuide appState={appState} />
-        </nav>
-        <main id="kx-main">
-          <Switch>
-            <Route exact path={`${path}/info`}>
-              <Info />
-            </Route>
-            <Route exact path={`${path}/download`}>
-              <Download />
-            </Route>
-            <Route exact path={`${path}/fill-out`}>
-              <FillOut />
-            </Route>
-            <Route exact path={path}>
-              <Home />
-            </Route>
-          </Switch>
-        </main>
-      </AppStateContext.Provider>
+    <div className="ds-base">
+      <header className="ds-base--inverse ds-u-padding--3 ds-u-display--flex ds-u-justify-content--between ds-u-align-items--center">
+        <h1 className="ds-h3 ds-u-margin-bottom--0">Kylix</h1>
+      </header>
+      <div className="kx-wrap ds-u-padding-top--3">
+        <DynamicForm />
+      </div>
     </div>
   );
 }

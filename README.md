@@ -11,11 +11,11 @@ A web application front end and API backend for provisioning digital ballots and
 1. Install packages: `npm install`
 2. Compile and bundle assets: `npm run start`
 3. Open `http://localhost:9000` in a browser.
-4. Run mock api `npm run start-mock-api` and browse api schema at `http://localhost:9000/api-browser.html`
+4. Browse api schema at `http://localhost:3000/api-browser.html`
 
 ## Demo
 
-In the demo, enter the following to trigger a successful response: 
+In the demo, enter the following to trigger a successful response:
 Driver's License: W888444111666
 Eye Color: Blue
 
