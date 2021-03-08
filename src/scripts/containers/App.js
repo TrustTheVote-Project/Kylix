@@ -1,40 +1,29 @@
 import React from 'react';
 import {
-  HashRouter as Router, Switch, Route,
+  BrowserRouter as Router, Switch, Route, Link,
 } from 'react-router-dom';
-import useAppState from '../hooks/useAppState';
-import AppStateContext from '../context/AppStateContext';
-import StepsGuide from '../components/StepsGuide';
-import {
-  Download, FillOut, Info, Home,
-} from '../components/screens';
+import WizardFlow from './WizardFlow';
+import DynamicFormFlow from './DynamicFormFlow';
+
 import '../../styles/index.scss';
 
 export default function App() {
-  const appState = useAppState();
   return (
-    <AppStateContext.Provider value={appState}>
-      <Router hashType="noslash">
-        <nav>
-          <StepsGuide appState={appState} />
-        </nav>
-        <main id="kx-main">
-          <Switch>
-            <Route path="/info">
-              <Info />
-            </Route>
-            <Route path="/download">
-              <Download />
-            </Route>
-            <Route path="/fill-out">
-              <FillOut />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-        </main>
-      </Router>
-    </AppStateContext.Provider>
+    <Router>
+      <Switch>
+        <Route path="/wizard">
+          <WizardFlow />
+        </Route>
+        <Route path="/dynamic">
+          <DynamicFormFlow />
+        </Route>
+        <Route exact path="/">
+          <ul>
+            <li><Link to="/wizard">Wizard Flow</Link></li>
+            <li><Link to="/dynamic">Dynamic Form Flow</Link></li>
+          </ul>
+        </Route>
+      </Switch>
+    </Router>
   );
 }

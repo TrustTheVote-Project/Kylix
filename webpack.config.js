@@ -15,11 +15,13 @@ const config = {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 9000,
+    historyApiFallback: true,
   },
   output: {
     filename: '[name].bundle.js',
     // chunkFilename: "[id].bundle_[chunkhash].js",
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
   module: {
     rules: [
