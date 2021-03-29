@@ -6,6 +6,10 @@
 
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+
+const clientPort = process.env.WEB_PORT || 9000;
+const serverPort = process.env.PORT || 5000;
 
 const config = {
   entry: {
@@ -14,8 +18,12 @@ const config = {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
-    port: 9000,
+    port: clientPort,
     historyApiFallback: true,
+    proxy: {
+      '/api/**': { target: `http://localhost:${serverPort}`, changeOrigin: true },
+      '/api-docs/**': { target: `http://localhost:${serverPort}`, changeOrigin: true },
+    },
   },
   output: {
     filename: '[name].bundle.js',
@@ -85,6 +93,10 @@ const config = {
       filename: 'index.html',
       chunks: ['app'],
     }),
+    new webpack.DefinePlugin({
+      API_BASE: '/api',
+    }),
+
     // new HtmlWebPackPlugin({
     //   template: 'src/api/api-browser.html',
     //   filename: 'api-browser.html',

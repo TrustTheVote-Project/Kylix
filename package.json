@@ -10,10 +10,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production webpack -p --progress --display-used-exports",
-    "start-ui-dev": "webpack-dev-server",
-    "start-ui-prod": "node src/scripts/server.js",
-    "start-mock-server": "node ./src/api/mock-server/app.js",
-    "start-dev": "concurrently \"npm run start-ui-dev\" \"npm run start-mock-server\""
+    "start-client-dev": "webpack-dev-server",
+    "start-server-dev": "NODE_ENV=development node src/scripts/server.js",
+    "start-prod": "NODE_ENV=production node src/scripts/server.js",
+    "start": "concurrently \"npm run start-server\" \"npm run start-client-dev\"",
+    "deploy": "npm run build && eb deploy"
   },
   "repository": {
     "type": "git",

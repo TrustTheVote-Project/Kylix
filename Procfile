@@ -1,1 +1,1 @@
-web: npm run start-ui-prod
+web: npm run start-prod

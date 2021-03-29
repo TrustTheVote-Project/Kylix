@@ -110,7 +110,7 @@ export default function postVoterLookup(data = defaultData, onSuccess, onError) 
       },
     },
   };
-  sendRequest('http://localhost:3000/api/v1/voter-lookup', postData)
+  sendRequest('/api/v1/voter-lookup', postData)
     .then((response) => {
       if (response.status !== 200) {
         // console.log('Looks like there was a problem. Status Code: ' +
