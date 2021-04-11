@@ -12,8 +12,8 @@
     "build": "NODE_ENV=production webpack -p --progress --display-used-exports",
     "start-client-dev": "webpack-dev-server",
     "start-server-dev": "NODE_ENV=development node src/scripts/server.js",
-    "start-prod": "NODE_ENV=production node src/scripts/server.js",
-    "start": "concurrently \"npm run start-server\" \"npm run start-client-dev\"",
+    "start-server-prod": "NODE_ENV=production node src/scripts/server.js",
+    "start": "concurrently \"npm run start-server-prod\" \"npm run start-client-dev\"",
     "deploy": "npm run build && eb deploy"
   },
   "repository": {
