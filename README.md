@@ -27,3 +27,15 @@ githup repo: https://github.com/CMSgov/design-system
 documentation: https://design.cms.gov/
 From the website: "The CMS Design System currently meets or exceeds WCAG 2.0 AA and Section 508 standards"
 https://github.com/CMSgov/design-system/tree/master/examples/react-app
+
+## Deployments
+The Elastic Beanstalk service is used to deploy the application to AWS. We don't have continuous deployment set up (yet), so for now you must deploy changes from your local machine.
+
+Before you deploy, you must first install the EB CLI. Links: 
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-getting-started.html
+
+To deploy a new version to kylix-demo from the root of the application:
+- `eb use kylix-demo-prod` 
+- `eb deploy` (sends code up to S3 & deploys application)
+- Your changes should appear at kylix-demo.us-east-1.elasticbeanstalk.com
