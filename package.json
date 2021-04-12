@@ -1,15 +1,20 @@
 {
   "name": "kylix",
   "version": "0.0.0",
+  "engines": {
+    "node": "12.16.3"
+  },
   "private": true,
   "description": "A web application front end and API backend for provisioning digital ballots and voter records, and enabling voters to download ballots to mark online, print, and mail back like any other absentee ballot.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production webpack -p --progress --display-used-exports",
-    "start-client": "webpack-dev-server",
-    "start-mock-server": "node ./src/api/mock-server/app.js",
-    "start": "concurrently \"npm run start-client\" \"npm run start-mock-server\""
+    "start-client-dev": "webpack-dev-server",
+    "start-server-dev": "NODE_ENV=development node src/scripts/server.js",
+    "start-server-prod": "NODE_ENV=production node src/scripts/server.js",
+    "start": "concurrently \"npm run start-server-prod\" \"npm run start-client-dev\"",
+    "deploy": "npm run build && eb deploy"
   },
   "repository": {
     "type": "git",

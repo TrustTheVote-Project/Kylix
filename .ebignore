@@ -82,7 +82,11 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+
+#################################
+Include dist dir in eb (elasticbeanstalk) deployment
+#################################
+# dist
 
 # Gatsby files
 .cache/
