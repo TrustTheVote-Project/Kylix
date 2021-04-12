@@ -41,13 +41,10 @@ Do the following from the repo root to setup:
 - Select 1) us-east-1
 - Select application `kylix`
 - Select "no" for the CodeCommit option
-- Run `eb use kylix-prod-env` to select the prod environment
+- Run `eb use kylix-env` to select the prod environment
 
 ### Elastic Beanstalk Deployment
 
 To deploy a new version to kylix-demo-prod from the root of the application:
 - Run `eb deploy` (sends code up to S3 & deploys application)
 - Your changes should appear at kylix-demo.us-east-1.elasticbeanstalk.com
-
-### Other
-For the record, this was the command to create the environment: `eb create --sample --cname kylix-prod-env kylix-prod-env`
