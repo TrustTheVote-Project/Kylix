@@ -2,7 +2,7 @@
   "name": "kylix",
   "version": "0.0.0",
   "engines": {
-    "node": "14.16.0"
+    "node": "12.16.3"
   },
   "private": true,
   "description": "A web application front end and API backend for provisioning digital ballots and voter records, and enabling voters to download ballots to mark online, print, and mail back like any other absentee ballot.",
