@@ -10,8 +10,7 @@ post:
         examples:
           Michigan:
             summary: "Valid request for Michigan ballot"
-            value:
-              $ref: "../../components/examples/voter-lookup--MI.json"
+            $ref: "../../components/examples/voter-lookup--MI.json"
   responses:
     "200":
       description: Returns a voter record
