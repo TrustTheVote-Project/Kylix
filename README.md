@@ -47,4 +47,4 @@ Do the following from the repo root to setup:
 
 To deploy a new version to kylix-demo-prod from the root of the application:
 - Run `eb deploy` (sends code up to S3 & deploys application)
-- Your changes should appear at kylix-demo.us-east-1.elasticbeanstalk.com
+- Your changes should appear at http://kylix-env.eba-4iemcn7i.us-east-1.elasticbeanstalk.com
