@@ -46,5 +46,15 @@ Do the following from the repo root to setup:
 ### Elastic Beanstalk Deployment
 
 To deploy a new version to kylix-demo-prod from the root of the application:
-- Run `eb deploy` (sends code up to S3 & deploys application)
-- Your changes should appear at http://kylix-env.eba-4iemcn7i.us-east-1.elasticbeanstalk.com
+1) build the application locally: `npm run build`
+2) bump the current version using one of the following:
+  * `npm version major --force`
+  * `npm version minor --force`
+  * `npm version minor --force`
+  * `npm version [v0.0.0] --force`
+  More options here: https://docs.npmjs.com/cli/v7/commands/npm-version
+3) Run `eb deploy kylix-env -l $(npm view kylix version)`
+This labels the elastic beanstalk version with the npm version created in the last step, to connect them together. Then it sends code up to S3 & deploys application
+
+After deploying, Your changes should appear at the live url: 
+http://kylix-env.eba-4iemcn7i.us-east-1.elasticbeanstalk.com
