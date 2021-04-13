@@ -11,7 +11,7 @@ A web application front end and API backend for provisioning digital ballots and
 1. Install packages: `npm install`
 2. Compile and bundle assets: `npm run start`
 3. Open `http://localhost:9000` in a browser.
-4. Browse api schema at `http://localhost:3000/api-browser.html`
+4. Browse api schema at `http://localhost:5000/api-browser.html`
 
 ## Demo
 
@@ -46,5 +46,19 @@ Do the following from the repo root to setup:
 ### Elastic Beanstalk Deployment
 
 To deploy a new version to kylix-demo-prod from the root of the application:
-- Run `eb deploy` (sends code up to S3 & deploys application)
-- Your changes should appear at kylix-demo.us-east-1.elasticbeanstalk.com
+1) Checkout and pull down the latest from `master` branch
+
+2) Build the application locally: `npm run build`
+
+3) Bump the semantic version using npm version command. Examples:
+  * `npm version major --force`
+  * `npm version minor --force`
+  * `npm version minor --force`
+  * `npm version [v0.0.0] --force`
+  More options here: https://docs.npmjs.com/cli/v7/commands/npm-version
+4) Run `eb deploy kylix-env -l $(npm view kylix version)`
+This labels the elastic beanstalk version with the npm version created in the last step, to connect them together. Then it sends code up to S3 & deploys application
+4) Run `git push --follow-tags` up to master to ensure this commit is connected to the npm version and the elastic beanstalk version.
+
+After deploying, Your changes should appear at the live url: 
+http://kylix-env.eba-4iemcn7i.us-east-1.elasticbeanstalk.com

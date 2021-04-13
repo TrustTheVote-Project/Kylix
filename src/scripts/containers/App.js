@@ -18,10 +18,21 @@ export default function App() {
           <DynamicFormFlow />
         </Route>
         <Route exact path="/">
-          <ul>
-            <li><Link to="/wizard">Wizard Flow</Link></li>
-            <li><Link to="/dynamic">Dynamic Form Flow</Link></li>
-          </ul>
+          <div className="wrap kx-wrap">
+            <h1>Kylix Demo</h1>
+            <h2>Links</h2>
+            <ul>
+              <li>
+                <Link to="/wizard">Demo (Wizard Flow)</Link>
+              </li>
+              <li>
+                <Link to="/dynamic">Demo (Dynamic Form)</Link>
+              </li>
+              <li>
+                <Link to="/api-docs" target="_blank">API docs</Link>
+              </li>
+            </ul>
+          </div>
         </Route>
       </Switch>
     </Router>
