@@ -8,7 +8,7 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
-const clientPort = process.env.WEB_PORT || 9000;
+const webPort = process.env.WEB_PORT || 9000;
 const serverPort = process.env.PORT || 5000;
 
 const config = {
@@ -18,7 +18,7 @@ const config = {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
-    port: clientPort,
+    port: webPort,
     historyApiFallback: true,
     proxy: {
       '/api/**': { target: `http://localhost:${serverPort}`, changeOrigin: true },
