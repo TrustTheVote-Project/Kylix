@@ -14,7 +14,7 @@ const startServer = async () => {
 
   // only serve static files in prod
   // as we use webpack dev server for development
-  if (env !== 'dev') {
+  if (env === 'production') {
   // Serve the static files from the React app
     app.use('/', express.static(path.join(__dirname, '../../dist')));
 
