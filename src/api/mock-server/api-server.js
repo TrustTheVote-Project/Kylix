@@ -4,13 +4,11 @@ const bodyParser = require('body-parser');
 const useRoutes = require('./useRoutes');
 const useApiDocs = require('./useApiDocs');
 
-const apiServer = async (_app, _port) => {
+const apiServer = async (_app) => {
   const app = _app || express();
-  const port = _port || process.env.PORT || 5000;
-
   app.use(bodyParser.json());
   useRoutes(app);
-  await useApiDocs(app, port);
+  await useApiDocs(app);
 };
 
 module.exports = apiServer;

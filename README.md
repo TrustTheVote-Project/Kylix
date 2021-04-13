@@ -53,8 +53,9 @@ To deploy a new version to kylix-demo-prod from the root of the application:
 3) Bump the semantic version using npm version command. Examples:
   * `npm version major --force`
   * `npm version minor --force`
-  * `npm version minor --force`
+  * `npm version patch --force`
   * `npm version [v0.0.0] --force`
+  * `npm version prepatch --force` (example of a non-semver version if you are testing deploy on a branch)
   More options here: https://docs.npmjs.com/cli/v7/commands/npm-version
 4) Run `eb deploy kylix-env -l $(npm view kylix version)`
 This labels the elastic beanstalk version with the npm version created in the last step, to connect them together. Then it sends code up to S3 & deploys application

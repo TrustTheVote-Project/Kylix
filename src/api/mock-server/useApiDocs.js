@@ -6,15 +6,15 @@ const SwaggerParser = require('@apidevtools/swagger-parser');
 
 const specPath = path.join(__dirname, '../api-docs/api-doc.yaml');
 
-module.exports = async function useApiDocs(app, port) {
+module.exports = async function useApiDocs(app) {
   const specObj = await SwaggerParser.bundle(specPath);
   const options = {
     swaggerDefinition: {
       ...specObj,
       servers: [
         {
-          url: `http://localhost:${port}/api`,
-          description: 'Local mock server instance',
+          url: '/api',
+          description: 'Mock server instance',
         },
       ],
     },
