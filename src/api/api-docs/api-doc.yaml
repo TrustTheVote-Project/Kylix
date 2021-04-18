@@ -9,7 +9,5 @@ servers:
 paths:
   $ref: "./paths/index.yaml"
 components:
-  examples:
-    $ref: "./components/examples/index.yaml"
   schemas:
     $ref: "./components/schemas/index.yaml"
