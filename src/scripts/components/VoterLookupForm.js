@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { useHistory } from "react-router-dom";
 import Alert from '@cmsgov/design-system/dist/components/Alert/Alert';
 import Button from '@cmsgov/design-system/dist/components/Button/Button';
 import Dropdown from '@cmsgov/design-system/dist/components/Dropdown/Dropdown';
 import FormLabel from '@cmsgov/design-system/dist/components/FormLabel/FormLabel';
 import TextField from '@cmsgov/design-system/dist/components/TextField/TextField';
 import postVoterLookup from '../api-sdk/postVoterLookup';
-// import PropTypes from 'prop-types';
+import AppStateContext from '../context/AppStateContext';
 
 const VoterLookupForm = () => {
+  const appState = useContext(AppStateContext);
   const [driversLicense, setDriversLicense] = useState('');
   const [streetAddress, setStreetAddress] = useState('');
   const [city, setCity] = useState('');
@@ -77,10 +79,13 @@ const VoterLookupForm = () => {
     { label: 'Brown', value: 'BRO' },
     { label: 'Unknown', value: 'XXX' },
   ];
+  const history = useHistory();
   const onSuccess = (data) => {
     const { BallotUrl: _ballotUrl } = data;
     if (_ballotUrl) {
+      appState.setBallotUrl(_ballotUrl);
       setBallotUrl(_ballotUrl);
+      history.push('/wizard');
     } else {
       setFormError('Please try again.');
       setBallotUrl(null);
