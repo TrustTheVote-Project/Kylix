@@ -15,7 +15,7 @@ export default function App() {
         <Route path="/wizard">
           <WizardFlow />
         </Route>
-        <Route path="/dynamic">
+        <Route path="/find">
           <DynamicFormFlow />
         </Route>
         <Route path="/welcome">
@@ -33,7 +33,7 @@ export default function App() {
                 <Link to="/wizard">Demo (Wizard Flow)</Link>
               </li>
               <li>
-                <Link to="/dynamic">Demo (Dynamic Form)</Link>
+                <Link to="/find">Demo (Dynamic Form)</Link>
               </li>
               <li>
                 <Link to="/api-docs" target="_blank">API docs</Link>

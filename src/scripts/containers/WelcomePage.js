@@ -28,7 +28,7 @@ export default function DynamicFormFlow() {
         variation="primary"
         type="button"
         size="big"
-        href="/dynamic"
+        href="/find"
       >
         Get Started
       </Button>
