@@ -22,24 +22,7 @@ export default function App() {
           <WelcomePage />
         </Route>
         <Route exact path="/">
-          <div className="wrap kx-wrap">
-            <h1>Kylix Demo</h1>
-            <h2>Links</h2>
-            <ul>
-              <li>
-                <Link to="/welcome">Welcome</Link>
-              </li>
-              <li>
-                <Link to="/wizard">Demo (Wizard Flow)</Link>
-              </li>
-              <li>
-                <Link to="/find">Demo (Dynamic Form)</Link>
-              </li>
-              <li>
-                <Link to="/api-docs" target="_blank">API docs</Link>
-              </li>
-            </ul>
-          </div>
+          <WelcomePage />
         </Route>
       </Switch>
     </Router>
