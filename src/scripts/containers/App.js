@@ -4,6 +4,7 @@ import {
 } from 'react-router-dom';
 import WizardFlow from './WizardFlow';
 import DynamicFormFlow from './DynamicFormFlow';
+import WelcomePage from './WelcomePage';
 
 import '../../styles/index.scss';
 
@@ -17,11 +18,17 @@ export default function App() {
         <Route path="/dynamic">
           <DynamicFormFlow />
         </Route>
+        <Route path="/welcome">
+          <WelcomePage />
+        </Route>
         <Route exact path="/">
           <div className="wrap kx-wrap">
             <h1>Kylix Demo</h1>
             <h2>Links</h2>
             <ul>
+              <li>
+                <Link to="/welcome">Welcome</Link>
+              </li>
               <li>
                 <Link to="/wizard">Demo (Wizard Flow)</Link>
               </li>
